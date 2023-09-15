@@ -55,6 +55,7 @@ Invest in technology to engage the target audience continuously
  	Invest in technology to engage the target audience continuously
 
 ####### NextSteps
+
 	Consider more analysis to establish the poorly performing genres and establish the reason to their poor performance.
 	Establish the role of technology in improving the performance of contemporary movie studios.
 	Predict the undesirable trends in movie production for the contemporary audience. 
