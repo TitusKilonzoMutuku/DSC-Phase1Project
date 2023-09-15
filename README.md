@@ -48,3 +48,14 @@ Engaging top-notch directors and writers should be prioritized too. Investing re
 It is imperative to put more emphasis on the highly regarded genres when planning for production to attract positive responses and establish the studio is the go-to studio for contemporary movie consumers. 
 By observing production trends, the studio can make informed decisions regarding resource allocation for future projects. For example, during periods of increased production, more resources may be needed for casting, marketing, and distribution.
 Invest in technology to engage the target audience continuously
+
+###### Recommendations
+ 	Put more emphasis on the highly regarded genres when planning for production to attract positive responses and establish the studio is the go-to studio for contemporary movie consumers. 
+ 	By observing production trends, the studio can make informed decisions regarding resource allocation for future projects. For example, during periods of increased production, more resources may be needed for casting, marketing, and distribution.
+ 	Invest in technology to engage the target audience continuously
+
+####### Next Steps
+	Consider more analysis to establish the poorly performing genres and establish the reason to their poor performance.
+	Establish the role of technology in improving the performance of contemporary movie studios.
+	Predict the undesirable trends in movie production for the contemporary audience. 
+
