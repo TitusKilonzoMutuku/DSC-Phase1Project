@@ -26,8 +26,20 @@ After settling on the ‘im.db’, the first step was to access the data in a pa
  	Biography, Documentary Drama
  	Biography, Music
  	Action
-![Alt Text](C:\Users\HP\Pictures\40 movies)
+![Alt Text]![image](https://github.com/TitusKilonzoMutuku/DSC-Phase1Project/assets/142430151/c772e512-03f0-4a1e-87cd-e2d0fe66e673)
+ 
 Therefore, inasmuch as the new Microsoft movie studio will diversify to produce as many genres as possible, the best performing genres according to the analysis are the one’s listed above. 
+
+The second visualization generated a histogram of average ratings whereby the analysis sought to establish how skewed the ratings were for the purpose of confirming how biased the audience could have been in order to make sound decisions as far as the new movie studio is concerned. The symmetrical distribution typically suggests that the ratings for the movies are evenly distributed around a central value. Therefore, the studio should use this information as a starting point for further analysis and decision-making and for understanding the nature of the target audience. 
+![Alt Text]![image](https://github.com/TitusKilonzoMutuku/DSC-Phase1Project/assets/142430151/2b977238-4053-41ba-84c1-2dd022920943)
+
+The third visualization sought to establish whether there is correlation between the average rating and the number of votes for each movie on the basis of their respective genres. Analyzing the relationship between average ratings and the number of votes provided valuable insights into audience engagement and the impact of audience size on perceived content quality. From the scatter graph, it is evident that the top rated movies and their respective genres tend to receive the most votes. It is therefore advisable for the manager of the new Microsoft movie studio to put more focus on the highly regarded genres when planning for production to attract positive responses and establish the studio is the go-to studio for contemporary movie consumers. 
+
+![Alt Text]![image](https://github.com/TitusKilonzoMutuku/DSC-Phase1Project/assets/142430151/60de87a1-6e38-4893-830b-843f3690aa9a)
+
+Finally, the analysis sought to establish the trend of movie production per year. To establish this line of thought, a count plot of movie production by year was created.  This visualization established the number of movies produced each year. It was established that movie production was on the rise up until 2019 whereby the industry witnessed a sudden decline. For justifiable conclusion, there needs to be done for the year 2020, 2021, and 2022 to determine whether the decline was subjective. The countplot allows the studio to visualize how the number of movies produced has evolved over time. This provides insights into trends and patterns in the studio's production history. This understanding can inform strategic decisions related to resource allocation, content strategy, and audience engagement, ultimately helping Microsoft Movie Studios succeed in the film industry. The decline signifies the need for huge resource allocation to outdo competitors and the probable decline. 
+![Alt Text]![image](https://github.com/TitusKilonzoMutuku/DSC-Phase1Project/assets/142430151/17f650f0-0194-4da3-8417-28f0b164ba22)
+
 
 #####Conclusion
 
