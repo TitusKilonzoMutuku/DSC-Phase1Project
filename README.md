@@ -58,6 +58,69 @@ mean_rating_documentary = documentary_movies['AVERAGERATING'].mean()
 
 print("Mean rating for Documentary movies:", mean_rating_documentary)
 '''
+'''python
+# Visualizing 
+import seaborn as sns
+# Assuming your DataFrame is named 'df5'
+# Sort 'df5' by 'AVERAGERATING' in descending order and select the top 40
+top_40_movies = df5.sort_values(by='AVERAGERATING', ascending=False).head(40)
+
+# Create a vertical bar graph using Seaborn
+plt.figure(figsize=(12, 10))
+sns.barplot(data=top_40_movies, x='MOVIE_ID', y='AVERAGERATING', hue='GENRES', palette='viridis')
+plt.xlabel('Movie ID')
+plt.ylabel('Average Rating')
+plt.title('Top 40 Movies by Average Rating')
+
+plt.xticks(rotation=90)  # Rotate x-axis labels for better readability
+
+plt.grid(axis='y')  # Add horizontal grid lines for y-axis
+
+plt.legend(loc='upper right', bbox_to_anchor=(1.4, 1))
+
+plt.show()
+# Create a histogram of average ratings
+# Set the figure size
+plt.figure(figsize=(12, 8))  
+sns.histplot(data=df5, x='Average_Rating', bins=20, kde=True)
+plt.xlabel('Average Rating')
+plt.ylabel('Frequency')
+plt.title('Distribution of Average Ratings')
+plt.show()
+# Create a scatter plot of average ratings vs. number of votes
+plt.figure(figsize=(12, 8))
+sns.scatterplot(data=df5, x='Average_Rating', y='NUM_VOTES')
+plt.xlabel('Average Rating')
+plt.ylabel('Number of Votes')
+plt.title('Average Ratings vs. Number of Votes')
+plt.show()
+# Create a countplot of movie production by year
+plt.figure(figsize=(12, 6))
+sns.countplot(data=df5, x='START_YEAR', palette='viridis')
+plt.xticks(rotation=90)
+plt.xlabel('Year')
+plt.ylabel('Number of Movies (Based on the List of Genres)')
+plt.title('Yearly Movie Production Trends')
+plt.show()
+import matplotlib.pyplot as plt
+
+# reducing the sample to 20 for clarity
+director_ratings = finaldf.groupby('DIRECTOR_ID')['AVERAGERATING'].mean()
+top_20_directors = director_ratings.sort_values(ascending=False).head(20)
+
+# Plotting the top 20 directors and their average ratings
+plt.figure(figsize=(12, 6))
+plt.plot(top_20_directors.index, top_20_directors.values, marker='o', linestyle='-', color='b')
+
+plt.title('Top 20 Directors by Average Movie Rating')
+plt.xlabel('Director ID')
+plt.ylabel('Average Rating')
+plt.xticks(rotation=90)
+plt.grid(True)
+plt.tight_layout()
+
+plt.show()
+'''
 This was followed by calculating the value count to check the categorical variable distribution of various genres in the ‘Genre’ field.  After cleaning the tables, I joined them and the process of data visualization kicked in.  The first graph was generated using the seaborn module where I created a vertical bar graph.  Because of the length of the data in each field, a sample population of 40 variables was selected based on average ratings and genres.  The goal was to select the top 40 movies in the merged DataFrame. From the graph, all the top for movies and their corresponding genres have a rating of more than 9 in a scale of 10. The most preferred genres according to the generated barplot and in the order of preference include;
  	Documentary
  	Drama
