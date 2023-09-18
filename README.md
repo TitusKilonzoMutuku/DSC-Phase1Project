@@ -16,8 +16,49 @@ vii.	To develop a quality assessment metric considering both user ratings and vo
 
 ####Data Understanding and Analysis
 
+Sources of data
+Source 1 : 'im.db.zip'
+Source 2 : 'bom.movie_gross.csv.gz'
+
 Because of the wealth of data available that can help understand the film production industry, began with the selection of the most ideal datasets to work with. The process of data cleaning began with the exploration of the available datasets. After an in-depth comparison, I decided to work with the ‘im.db’ database where I analyzing a database that contains several tables. The most important tables in the database were; 'Movie basics' and 'Movie ratings'.  Each table has various fields which anchor critical information necessary for analysis. I later conducted visualization that played a critical role in drawing my conclusions, insights, and recommendations necessary for Microsoft movie studios. The fields for the 'Movie basics' table include; Movie_id, Primary title, Original title, Start_year, Runntime_minutes, and most importantly, the ‘Genres’ field. The second table contains three major fields; the Movie _id column, Average rating column, and the Number_of_votes column. Here, I was able to gain a deep understanding of the dataset's characteristics. I completed the data cleaning process where I addressed the issue of missing values, dropped unnecessary columns, edited the field titles, and shaped the tables in a more attractive manner for analysis.
-After settling on the ‘im.db’, the first step was to access the data in a pandas DataFrame format where I generated the ‘Movie_basics’ and the ‘Movie_ratings’ tables. This was followed by calculating the value count to check the categorical variable distribution of various genres in the ‘Genre’ field.  After cleaning the tables, I joined them and the process of data visualization kicked in.  The first graph was generated using the seaborn module where I created a vertical bar graph.  Because of the length of the data in each field, a sample population of 40 variables was selected based on average ratings and genres.  The goal was to select the top 40 movies in the merged DataFrame. From the graph, all the top for movies and their corresponding genres have a rating of more than 9 in a scale of 10. The most preferred genres according to the generated barplot and in the order of preference include;
+After settling on the ‘im.db’, the first step was to access the data in a pandas DataFrame format where I generated the ‘Movie_basics’ and the ‘Movie_ratings’ tables.
+''' python
+# To access the data in a pandas dataframe format
+df1 = pd.read_sql("""SELECT * FROM movie_basics;""", conn)
+df1.head()
+# use value count to check categorical variable distribution
+df1['genres'].value_counts().head()
+# Use a one line code to open the 'movie_ratings' table
+df2 = pd.read_sql("""SELECT * FROM movie_ratings;""", conn)
+df2
+# To identify non-null values in a runtime_minutes column:
+null_column = pd.isna(df1['runtime_minutes'])
+null_column
+# Replace null values in 'genres' column with 'Horror, Thriller' where 'runtime_minutes' is < 100
+df1.loc[df1['runtime_minutes'] < 100, 'genres'] = df1.loc[df1['runtime_minutes'] < 100, 'genres'].fillna('Horror, Thriller')
+df1.loc[df1['runtime_minutes'] >= 100, 'genres'] = 'Documentary'
+# Instead of changing the columns one by one, i decided to change all the column names to uppercase
+df1.columns = [column.upper() for column in df1.columns]
+df1.head()
+# Specify the collumn and in this case is the 'PRIMARY_TITLE'
+column_names = 'PRIMARY_TITLE'
+
+# Remove duplicates in the column
+df1 = df1.drop_duplicates(subset=[column_names])
+df1
+# merge the 2 tables(DataFrames)
+df4 = df1.merge(df2, on='MOVIE_ID', how='inner')
+df4.head()
+# Calculate the mean of the AVERAGERATING for all documentaries
+# Filter the DataFrame to select only movies with the "Documentary" genre
+documentary_movies = df4[df4['GENRES'] == 'Documentary']
+
+# Calculate the mean of the AVERAGERATING column for Documentary movies
+mean_rating_documentary = documentary_movies['AVERAGERATING'].mean()
+
+print("Mean rating for Documentary movies:", mean_rating_documentary)
+'''
+This was followed by calculating the value count to check the categorical variable distribution of various genres in the ‘Genre’ field.  After cleaning the tables, I joined them and the process of data visualization kicked in.  The first graph was generated using the seaborn module where I created a vertical bar graph.  Because of the length of the data in each field, a sample population of 40 variables was selected based on average ratings and genres.  The goal was to select the top 40 movies in the merged DataFrame. From the graph, all the top for movies and their corresponding genres have a rating of more than 9 in a scale of 10. The most preferred genres according to the generated barplot and in the order of preference include;
  	Documentary
  	Drama
  	Adventure, Comedy
